@@ -27,3 +27,8 @@ services:
     environment:
       ACCEPT_EULA: "Y"
 
+  server:
+    image: rhyderquinlan8/uber-server
+    ports:
+      - 9090:9090
+
