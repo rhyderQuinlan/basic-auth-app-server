@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  db:
+    image: mysql:5.7.10
+    environment:
+      MYSQL_DATABASE: "db"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - 3306:3306
+    command: [--max-allowed-packet=67108864]
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  seq: 
+    image: datalust/seq
+    restart: always
+    ports:
+      - 80:80
+      - 5341:5341
+    environment:
+      ACCEPT_EULA: "Y"
+

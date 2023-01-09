@@ -1,0 +1,9 @@
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+.env
+.eslintrc.yml
+package-lock.json
