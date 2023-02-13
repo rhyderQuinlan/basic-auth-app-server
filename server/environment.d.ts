@@ -4,6 +4,10 @@ declare global {
       HTTP_PORT: number
       SEQ_KEY: string
       SEQ_PORT: number
+      ACCESS_SECRET: string
+      REFRESH_SECRET: string
+      ACCESS_TOKEN_EXPIRY_TIME: string
+      REFRESH_TOKEN_EXPIRY_TIME: string
     }
   }
 }

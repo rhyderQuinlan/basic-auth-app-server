@@ -28,7 +28,11 @@ services:
       ACCEPT_EULA: "Y"
 
   server:
-    image: rhyderquinlan8/uber-server
+    build: .
+    env_file:
+      - .env
+    links:
+      - db
+      - seq
     ports:
-      - 9090:9090
-
+      - 3001:3001
