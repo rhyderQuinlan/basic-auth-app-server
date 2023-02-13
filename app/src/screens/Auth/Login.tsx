@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Dimensions, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Formik} from 'formik';
 import {Input} from 'react-native-elements';
-import {Button} from '../../components/Button';
+import {Button} from 'react-native-paper';
 import {AuthContext} from '../../common/AuthProvider';
 import Container from './components/Container';
 import {Method, httpRequest} from '../../services/serverclient/httpserver';
@@ -110,12 +110,9 @@ export default function LoginScreen() {
             />
             {passwordError.length > 0 && <Text>{passwordError}</Text>}
 
-            <Button
-              title={'Login'}
-              onPress={handleSubmit}
-              disabled={false}
-              containerStyle={styles.actionButton}
-            />
+            <Button mode="contained" onPress={handleSubmit}>
+              Login
+            </Button>
           </>
         )}
       </Formik>

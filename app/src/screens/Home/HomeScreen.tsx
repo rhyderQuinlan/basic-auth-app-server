@@ -1,28 +1,45 @@
 import * as React from 'react';
-import {StyleSheet, View, Dimensions} from 'react-native';
-import SideMenu from 'react-native-side-menu';
+import {
+  StyleSheet,
+  View,
+} from 'react-native';
+import { Text } from 'react-native-paper';
 
-import {HomeContext} from '../../common/HomeProvider';
+import {palette} from '../../assets/theme';
+import Container from './components/Container';
 
-import {Homescreen} from './Screen';
-import {menu} from './components/Menu';
+interface IProps {
+}
 
-export default function HomeScreen() {
-  const {userLocation, drawer, toggleDrawer} = React.useContext(HomeContext);
-  return (
-    <View style={styles.container}>
-      <SideMenu
-        menu={menu}
-        isOpen={drawer}
-        onChange={() => toggleDrawer(drawer)}>
-        <Homescreen userLocation={userLocation} />
-      </SideMenu>
-    </View>
-  );
+interface IState {
+  fullscreen: boolean;
+}
+
+export class Homescreen extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+
+    this.state = {
+      fullscreen: false,
+    };
+  }
+
+  componentDidMount() {}
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text variant='titleLarge' style={{color: palette.WHITE}}>Homescreen</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
+    backgroundColor: palette.BLUE,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });

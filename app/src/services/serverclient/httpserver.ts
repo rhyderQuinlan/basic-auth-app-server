@@ -20,8 +20,7 @@ export async function httpRequest(
   return axios
     .request(options)
     .then((response: any) => {
-      console.log(response);
-      return {data: response.data, status: response.data.status};
+      return {data: response.data.data, status: response.data.status};
     })
     .catch((error: any) => {
       console.error(error);
